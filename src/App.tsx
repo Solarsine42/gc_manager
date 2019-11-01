@@ -1,5 +1,8 @@
 import React from "react";
+import Home from "./components/utility/Home";
+import Navi from "./components/utility/Navi";
 import { connect } from "react-redux";
+import { Route, Switch } from "react-router-dom";
 import { getTeetimes } from "./store/teetimes/actions";
 import { getCustomers } from "./store/customers/actions";
 import "./App.css";
