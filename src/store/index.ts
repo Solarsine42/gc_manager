@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import carsReducer from "./cars/reducer";
-import locationsReducer from "./locations/reducer";
+import customersReducer from "./customers/reducer";
+import teetimesReducer from "./teetimes/reducer";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 

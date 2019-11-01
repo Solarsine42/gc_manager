@@ -14,7 +14,7 @@ import {
   EDIT_TEETIME_FAILURE,
   EDIT_TEETIME_SUCCESS,
   EDIT_TEETIME_PENDING
-} from "../Constants";
+} from "../constants";
 
 const initialState = {
   all: [],

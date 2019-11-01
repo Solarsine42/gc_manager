@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getTeetimes } from "./store/tee_times/actions";
+import { getTeetimes } from "./store/teetimes/actions";
 import { getCustomers } from "./store/customers/actions";
 import "./App.css";
 

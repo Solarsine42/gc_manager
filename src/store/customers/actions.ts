@@ -15,7 +15,7 @@ import {
   EDIT_CUSTOMER_FAILURE,
   EDIT_CUSTOMER_SUCCESS,
   EDIT_CUSTOMER_PENDING
-} from "../Constants";
+} from "../constants";
 
 export const getCustomers = () => {
   return dispatch => {
