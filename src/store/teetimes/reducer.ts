@@ -1,3 +1,4 @@
+import { TeetimeActionType, Teetime } from "./types";
 import {
   LOAD_TEETIMES_FAILURE,
   LOAD_TEETIMES_SUCCESS,
@@ -22,7 +23,7 @@ const initialState = {
   teetime: {}
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: TeetimeActionType) => {
   switch (action.type) {
     case LOAD_TEETIMES_PENDING:
       return state;
@@ -54,7 +55,9 @@ export default (state = initialState, action) => {
     case DELETE_TEETIME_SUCCESS:
       return {
         ...state,
-        all: state.all.filter(teeTime => teeTime.id === action.payload.id)
+        all: state.all.filter(
+          (teetime: Teetime) => teetime.id === action.payload.id
+        )
       };
 
     case DELETE_TEETIME_FAILURE:

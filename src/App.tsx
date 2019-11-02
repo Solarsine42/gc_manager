@@ -1,8 +1,8 @@
 import React from "react";
-import Home from "./components/utility/Home";
+import Dashboard from "./components/utility/Dashboard";
 import Navi from "./components/utility/Navi";
 import { connect } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Route, Switch } from "react-router-dom";
 import { getTeetimes } from "./store/teetimes/actions";
 import { getCustomers } from "./store/customers/actions";
 import "./App.css";
@@ -16,7 +16,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <p>Homepage</p>>
+        <Navi />
+        <br />
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+        </Switch>
+        <p>This is App level</p>
       </div>
     );
   }

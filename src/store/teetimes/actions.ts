@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Dispatch } from "redux";
+import { Teetime } from "./types";
 import {
   LOAD_TEETIMES_FAILURE,
   LOAD_TEETIMES_SUCCESS,
@@ -18,7 +20,7 @@ import {
 } from "../constants";
 
 export const getTeetimes = () => {
-  return dispatch => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_TEETIMES_PENDING
     });
@@ -39,8 +41,8 @@ export const getTeetimes = () => {
   };
 };
 
-export const getOneTeetime = id => {
-  return dispatch => {
+export const getOneTeetime = (id: number) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_TEETIME_PENDING
     });
@@ -61,8 +63,8 @@ export const getOneTeetime = id => {
   };
 };
 
-export const addCustomer = teetime => {
-  return dispatch => {
+export const addCustomer = (teetime: Teetime) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: ADD_TEETIME_PENDING
     });
@@ -83,8 +85,8 @@ export const addCustomer = teetime => {
   };
 };
 
-export const rmvTeetime = id => {
-  return dispatch => {
+export const rmvTeetime = (id: number) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: DELETE_TEETIME_PENDING
     });
@@ -106,7 +108,9 @@ export const rmvTeetime = id => {
   };
 };
 
-export const editCustomer = (teetime, id) => dispatch => {
+export const editCustomer = (teetime: Teetime, id: number) => (
+  dispatch: Dispatch
+) => {
   dispatch({
     type: EDIT_TEETIME_PENDING
   });
