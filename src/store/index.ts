@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import customers from "./customers/reducer";
-import teetimes from "./teetimes/reducer";
+import { customersReducer } from "./customers/reducer";
+import { teetimesReducer } from "./teetimes/reducer";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-const rootReducer = combineReducers({ customers, teetimes });
+const rootReducer = combineReducers({ customersReducer, teetimesReducer });
 
 const middleware = [thunk, logger];
 

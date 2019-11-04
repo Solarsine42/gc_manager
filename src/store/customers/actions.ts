@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Dispatch } from "redux";
+import { Customer } from "./types";
 import {
   LOAD_CUSTOMERS_FAILURE,
   LOAD_CUSTOMERS_SUCCESS,
@@ -18,7 +20,7 @@ import {
 } from "../constants";
 
 export const getCustomers = () => {
-  return dispatch => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_CUSTOMERS_PENDING
     });
@@ -39,8 +41,8 @@ export const getCustomers = () => {
   };
 };
 
-export const getOneCustomer = id => {
-  return dispatch => {
+export const getOneCustomer = (id: number) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_CUSTOMER_PENDING
     });
@@ -61,8 +63,8 @@ export const getOneCustomer = id => {
   };
 };
 
-export const addCustomer = customer => {
-  return dispatch => {
+export const addCustomer = (customer: Customer) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: ADD_CUSTOMER_PENDING
     });
@@ -83,8 +85,8 @@ export const addCustomer = customer => {
   };
 };
 
-export const rmvCustomer = id => {
-  return dispatch => {
+export const rmvCustomer = (id: number) => {
+  return (dispatch: Dispatch) => {
     dispatch({
       type: DELETE_CUSTOMER_PENDING
     });
@@ -106,7 +108,9 @@ export const rmvCustomer = id => {
   };
 };
 
-export const editCustomer = (customer, id) => dispatch => {
+export const editCustomer = (customer: Customer, id: number) => (
+  dispatch: Dispatch
+) => {
   dispatch({
     type: EDIT_CUSTOMER_PENDING
   });

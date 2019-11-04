@@ -1,3 +1,4 @@
+import { CustomerActionType, Customer } from "./types";
 import {
   LOAD_CUSTOMERS_FAILURE,
   LOAD_CUSTOMERS_SUCCESS,
@@ -22,7 +23,10 @@ const initialState = {
   customer: {}
 };
 
-export default (state = initialState, action) => {
+export function customersReducer(
+  state = initialState,
+  action: CustomerActionType
+): any {
   switch (action.type) {
     case LOAD_CUSTOMERS_PENDING:
       return state;
@@ -54,7 +58,9 @@ export default (state = initialState, action) => {
     case DELETE_CUSTOMER_SUCCESS:
       return {
         ...state,
-        all: state.all.filter(customer => customer.id === action.payload.id)
+        all: state.all.filter(
+          (customer: Customer) => customer.id === action.payload.id
+        )
       };
 
     case DELETE_CUSTOMER_FAILURE:
@@ -75,4 +81,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-};
+}

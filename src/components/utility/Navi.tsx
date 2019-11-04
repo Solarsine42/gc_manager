@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
 
-interface NaviProps {
-  location: any;
-  match: any;
-  history: any;
-}
-
-const Navi = (props: NaviProps) => {
+const Navi = () => {
   return (
     <Navbar bg="light" variant="dark">
       <Navbar.Brand>
