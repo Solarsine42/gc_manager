@@ -9,7 +9,7 @@ import { getCustomers } from "./store/customers/actions";
 import "./App.css";
 
 interface AppProps {
-  dispatch: any;
+  dispatch: Dispatch;
 }
 
 class App extends React.Component<AppProps> {

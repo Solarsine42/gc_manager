@@ -19,7 +19,7 @@ import {
   EDIT_TEETIME_PENDING
 } from "../constants";
 
-export const getTeetimes = () => {
+export const getTeetimes = (): any => {
   return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_TEETIMES_PENDING

@@ -5,20 +5,24 @@ import { Navbar, Nav } from "react-bootstrap";
 
 const Navi = () => {
   return (
-    <Navbar bg="light" variant="dark">
+    <Navbar bg="success" variant="light">
       <Navbar.Brand>
-        <Link to="/">
+        <Link style={{ color: "white" }} to="/">
           <strong>Golf Course Manager</strong>
         </Link>
       </Navbar.Brand>
       <Nav.Item>
         <Nav.Link>
-          <Link to="/customers">Customers</Link>
+          <Link style={{ color: "white" }} to="/customers">
+            Customers
+          </Link>
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link>
-          <Link to="/teetimes">Tee Times</Link>
+          <Link style={{ color: "white" }} to="/teetimes">
+            Tee Times
+          </Link>
         </Nav.Link>
       </Nav.Item>
     </Navbar>

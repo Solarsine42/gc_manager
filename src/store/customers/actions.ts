@@ -19,7 +19,7 @@ import {
   EDIT_CUSTOMER_PENDING
 } from "../constants";
 
-export const getCustomers = () => {
+export const getCustomers = (): any => {
   return (dispatch: Dispatch) => {
     dispatch({
       type: LOAD_CUSTOMERS_PENDING
