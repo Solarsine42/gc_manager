@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
-import { InputGroup, FormControl, Form } from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
-import Customer from "./Customer";
+import CustomerList from "../customers/CustomerList";
+import TTList from "../teetimes/TTList";
 
 interface DashboardProps {
   location: any;
@@ -19,7 +17,16 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <h1>This is the Dashboard</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col-6">
+              <CustomerList />
+            </div>
+            <div className="col-6">
+              <TTList />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

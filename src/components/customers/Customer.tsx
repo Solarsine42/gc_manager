@@ -1,19 +1,20 @@
 import React from "react";
-import { connect } from "react-redux";
+import { tsPropertySignature } from "@babel/types";
 
-interface CustomerProps {
+interface propsTypes {
   location: any;
   match: any;
   history: any;
+  key: number;
+  customer: any;
 }
 
-const Customer = (props: CustomerProps) => {
+export const Customer: React.FC<propsTypes> = () => {
   return (
     <div>
-      <p>I'm a Customer</p>
-      <p>Me too!</p>
+      <p>{props.customer.name}</p>
     </div>
   );
 };
 
-export default connect()(Customer);
+export default Customer;

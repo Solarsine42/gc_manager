@@ -23,10 +23,7 @@ const initialState = {
   teetime: {}
 };
 
-export function teetimesReducer(
-  state = initialState,
-  action: TeetimeActionType
-): any {
+export function teetimes(state = initialState, action: TeetimeActionType): any {
   switch (action.type) {
     case LOAD_TEETIMES_PENDING:
       return state;

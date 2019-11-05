@@ -23,7 +23,7 @@ const initialState = {
   customer: {}
 };
 
-export function customersReducer(
+export function customers(
   state = initialState,
   action: CustomerActionType
 ): any {
