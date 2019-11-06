@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 const Navi = () => {
   return (

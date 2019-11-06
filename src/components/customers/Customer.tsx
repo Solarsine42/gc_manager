@@ -19,9 +19,14 @@ export const Customer: React.FC<CPropsTypes> = props => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Add Tee Time</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Remove Tee Time</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Edit/Delete</Dropdown.Item>
+          <Dropdown.Item>Add Tee Time</Dropdown.Item>
+          <Dropdown.Item>Remove Tee Time</Dropdown.Item>
+          <Dropdown.Item style={{ color: "orange" }}>
+            Edit Customer
+          </Dropdown.Item>
+          <Dropdown.Item style={{ color: "red" }}>
+            Delete Customer
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
