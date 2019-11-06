@@ -4,20 +4,18 @@ import Customer from "../customers/Customer";
 import { InputGroup, FormControl, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 
-interface propsTypes {
+interface CLPropsTypes {
   location: any;
   match: any;
   history: any;
-  customers: any;
-  customer: any;
-  key: number;
+  [key: string]: any;
 }
 
 interface stateTypes {
   query: string;
 }
 
-class CustomerList extends React.Component<propsTypes, stateTypes> {
+class CustomerList extends React.Component<CLPropsTypes, stateTypes> {
   state = {
     query: ""
   };
@@ -35,9 +33,20 @@ class CustomerList extends React.Component<propsTypes, stateTypes> {
         <Customer key={i} customer={customer} />
       ));
     return (
-      <div>
-        <p>{listOfCustomers}</p>
-      </div>
+      <Form>
+        <InputGroup className="mb-4">
+          <InputGroup.Prepend>
+            <InputGroup.Text>
+              <FaSearch />
+            </InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl
+            placeholder="Search by Customer..."
+            onChange={this.handleSort}
+          />
+        </InputGroup>
+        <div>{listOfCustomers}</div>
+      </Form>
     );
   }
 }
