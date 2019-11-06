@@ -11,20 +11,6 @@ const Navi = () => {
           <strong>Golf Course Manager</strong>
         </Link>
       </Navbar.Brand>
-      <Nav.Item>
-        <Nav.Link>
-          <Link style={{ color: "white" }} to="/customers">
-            Customers
-          </Link>
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link>
-          <Link style={{ color: "white" }} to="/teetimes">
-            Tee Times
-          </Link>
-        </Nav.Link>
-      </Nav.Item>
     </Navbar>
   );
 };

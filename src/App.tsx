@@ -23,7 +23,6 @@ class App extends React.Component<AppProps> {
       <div className="App">
         <Navi />
         <br />
-        <p>This is App level</p>
         <Switch>
           <Route exact path="/" component={Dashboard} />
         </Switch>
