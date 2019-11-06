@@ -8,28 +8,21 @@ interface DashboardProps {
   history: any;
 }
 
-class Dashboard extends React.Component {
-  state = {
-    query: "",
-    queryLoc: "1"
-  };
-
-  render() {
-    return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <CustomerList />
-            </div>
-            <div className="col-6">
-              <TTList />
-            </div>
+const Dashboard: React.FC<DashboardProps> = props => {
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <CustomerList />
+          </div>
+          <div className="col-6">
+            <TTList />
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Dashboard;

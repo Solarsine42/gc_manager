@@ -34,7 +34,7 @@ class CustomerList extends React.Component<CLPropsTypes, stateTypes> {
       ));
     return (
       <Form>
-        <InputGroup className="mb-4">
+        <InputGroup style={{ width: "70%" }} className="mb-4">
           <InputGroup.Prepend>
             <InputGroup.Text>
               <FaSearch />
