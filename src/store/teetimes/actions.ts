@@ -25,7 +25,7 @@ export const getTeetimes = (): any => {
       type: LOAD_TEETIMES_PENDING
     });
     axios
-      .get("http://localhost:8000/api/tee_times")
+      .get("http://localhost:8000/teetimes")
       .then(res => {
         dispatch({
           type: LOAD_TEETIMES_SUCCESS,
@@ -47,7 +47,7 @@ export const getOneTeetime = (id: number) => {
       type: LOAD_TEETIME_PENDING
     });
     axios
-      .get(`http://localhost:8000/api/tee_times/${id}`)
+      .get(`http://localhost:8000/teetimes/${id}`)
       .then(res => {
         dispatch({
           type: LOAD_TEETIME_SUCCESS,
@@ -69,7 +69,7 @@ export const addCustomer = (teetime: Teetime) => {
       type: ADD_TEETIME_PENDING
     });
     axios
-      .post("http://localhost:8000/api/tee_times", teetime)
+      .post("http://localhost:8000/teetimes", teetime)
       .then(res => {
         dispatch({
           type: ADD_TEETIME_SUCCESS,
@@ -91,7 +91,7 @@ export const rmvTeetime = (id: number) => {
       type: DELETE_TEETIME_PENDING
     });
     axios
-      .delete(`http://localhost:8000/api/tee_times/${id}`)
+      .delete(`http://localhost:8000/teetimes/${id}`)
       .then(res => {
         dispatch({
           type: DELETE_TEETIME_SUCCESS,
@@ -115,7 +115,7 @@ export const editCustomer = (teetime: Teetime, id: number) => (
     type: EDIT_TEETIME_PENDING
   });
   axios
-    .patch(`http://localhost:8000/api/tee_times/${id}`, teetime)
+    .patch(`http://localhost:8000/teetimes/${id}`, teetime)
     .then(res => {
       dispatch({
         type: EDIT_TEETIME_SUCCESS,

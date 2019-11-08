@@ -25,7 +25,7 @@ export const getCustomers = (): any => {
       type: LOAD_CUSTOMERS_PENDING
     });
     axios
-      .get("http://localhost:8000/api/customers")
+      .get("http://localhost:8000/customers")
       .then(res => {
         dispatch({
           type: LOAD_CUSTOMERS_SUCCESS,
@@ -47,7 +47,7 @@ export const getOneCustomer = (id: number) => {
       type: LOAD_CUSTOMER_PENDING
     });
     axios
-      .get(`http://localhost:8000/api/customers/${id}`)
+      .get(`http://localhost:8000/customers/${id}`)
       .then(res => {
         dispatch({
           type: LOAD_CUSTOMER_SUCCESS,
@@ -69,7 +69,7 @@ export const addCustomer = (customer: Customer) => {
       type: ADD_CUSTOMER_PENDING
     });
     axios
-      .post("http://localhost:8000/api/customers", customer)
+      .post("http://localhost:8000/customers", customer)
       .then(res => {
         dispatch({
           type: ADD_CUSTOMER_SUCCESS,
@@ -91,7 +91,7 @@ export const rmvCustomer = (id: number) => {
       type: DELETE_CUSTOMER_PENDING
     });
     axios
-      .delete(`http://localhost:8000/api/customers/${id}`)
+      .delete(`http://localhost:8000/customers/${id}`)
       .then(res => {
         dispatch({
           type: DELETE_CUSTOMER_SUCCESS,
@@ -115,7 +115,7 @@ export const editCustomer = (customer: Customer, id: number) => (
     type: EDIT_CUSTOMER_PENDING
   });
   axios
-    .patch(`http://localhost:8000/api/customers/${id}`, customer)
+    .patch(`http://localhost:8000/customers/${id}`, customer)
     .then(res => {
       dispatch({
         type: EDIT_CUSTOMER_SUCCESS,
