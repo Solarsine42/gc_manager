@@ -1,15 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Dropdown } from "react-bootstrap";
+import EditCustomerModal from "./EditCustomerModal";
+import DeleteCustomer from "./DeleteCustomer";
 
 interface CPropsTypes {
-  location: any;
-  match: any;
-  history: any;
+  customer: any;
+  id: number;
   [key: string]: any;
 }
 
-export const Customer: React.FC<CPropsTypes> = props => {
+const Customer: React.FC<CPropsTypes> = props => {
   const teeTimeList = props.customer.teetimes.map((ttime: any) => (
     <p>{ttime.time}</p>
   ));
@@ -26,12 +27,11 @@ export const Customer: React.FC<CPropsTypes> = props => {
           <Dropdown.Menu>
             <Dropdown.Item>Add Tee Time</Dropdown.Item>
             <Dropdown.Item>Remove Tee Time</Dropdown.Item>
-            <Dropdown.Item style={{ color: "orange" }}>
-              Edit Customer
-            </Dropdown.Item>
-            <Dropdown.Item style={{ color: "red" }}>
-              Delete Customer
-            </Dropdown.Item>
+            <EditCustomerModal
+              id={props.customer.id}
+              customer={props.customer}
+            />
+            <DeleteCustomer id={props.customer.id} />
           </Dropdown.Menu>
         </Dropdown>
       </div>

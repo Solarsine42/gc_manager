@@ -1,6 +1,7 @@
 import React from "react";
 import Dashboard from "./components/utility/Dashboard";
 import Navi from "./components/utility/Navi";
+import AddCustomer from "./components/customers/AddCustomer";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { Route, Switch } from "react-router-dom";
@@ -25,6 +26,7 @@ class App extends React.Component<AppProps> {
         <br />
         <Switch>
           <Route exact path="/" component={Dashboard} />
+          <Route path="/addCustomer" component={AddCustomer} />
         </Switch>
       </div>
     );

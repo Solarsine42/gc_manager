@@ -18,7 +18,7 @@ import {
 
 // Customer Model
 export interface Customer {
-  id: number;
+  id?: number;
   name: string;
   company: string;
   email: string;

@@ -5,9 +5,6 @@ import { InputGroup, FormControl, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 
 interface TLProps {
-  location: any;
-  match: any;
-  history: any;
   [key: string]: any;
 }
 

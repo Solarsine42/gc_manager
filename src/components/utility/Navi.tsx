@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Navi = () => {
   return (
@@ -11,6 +11,13 @@ const Navi = () => {
           <strong>Golf Course Manager</strong>
         </Link>
       </Navbar.Brand>
+      <Nav.Item>
+        <Nav.Link>
+          <Link style={{ color: "white" }} to="/addCustomer">
+            Add Customer
+          </Link>
+        </Nav.Link>
+      </Nav.Item>
     </Navbar>
   );
 };
