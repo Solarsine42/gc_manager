@@ -19,7 +19,7 @@ import {
 // Tee Time Model
 export interface Teetime {
   time: string;
-  id: number;
+  id?: number;
 }
 
 export interface TeetimeState {

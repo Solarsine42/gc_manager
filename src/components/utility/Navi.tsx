@@ -18,6 +18,13 @@ const Navi = () => {
           </Link>
         </Nav.Link>
       </Nav.Item>
+      <Nav.Item>
+        <Nav.Link>
+          <Link style={{ color: "white" }} to="/addTeetime">
+            Add Tee Time
+          </Link>
+        </Nav.Link>
+      </Nav.Item>
     </Navbar>
   );
 };

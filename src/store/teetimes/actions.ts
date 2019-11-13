@@ -63,7 +63,7 @@ export const getOneTeetime = (id: number) => {
   };
 };
 
-export const addCustomer = (teetime: Teetime) => {
+export const addTeetime = (teetime: Teetime) => {
   return (dispatch: Dispatch) => {
     dispatch({
       type: ADD_TEETIME_PENDING
@@ -108,7 +108,7 @@ export const rmvTeetime = (id: number) => {
   };
 };
 
-export const editCustomer = (teetime: Teetime, id: number) => (
+export const editTeetime = (teetime: Teetime, id: number) => (
   dispatch: Dispatch
 ) => {
   dispatch({
