@@ -11,7 +11,7 @@ const Teetime: React.FC<TPropsTypes> = props => {
     <p>{customer.name}</p>
   ));
 
-  console.log("TTProps", props);
+  // console.log("TTProps", props);
 
   return (
     <div>

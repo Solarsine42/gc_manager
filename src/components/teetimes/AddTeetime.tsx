@@ -13,15 +13,17 @@ interface ATTPropsTypes {
 }
 
 interface stateTypes {
-  time: any;
+  time: string;
+  customer: number;
 }
 
 class AddTeetime extends React.Component<ATTPropsTypes, stateTypes> {
   state = {
-    time: ""
+    time: "",
+    customer: 0
   };
 
-  handleDate = (date: any) => {
+  handleDate = (date: string) => {
     this.setState({ time: date });
   };
 
@@ -29,16 +31,22 @@ class AddTeetime extends React.Component<ATTPropsTypes, stateTypes> {
     e.preventDefault();
     this.props.dispatch(
       addTeetime({
-        time: this.state.time
+        time: this.state.time,
+        customer: this.state.customer
       })
     );
     this.setState({
-      time: ""
+      time: "",
+      customer: 0
     });
     window.location.assign("./");
   };
 
   render() {
+    const customerList = this.props.customers.map((player: any) => {
+      return <option value={player.id}>{player.name}</option>;
+    });
+
     return (
       <div
         style={{ marginLeft: "25%", marginRight: "25%", width: "50%" }}
@@ -58,14 +66,16 @@ class AddTeetime extends React.Component<ATTPropsTypes, stateTypes> {
               timeCaption="Time"
               dateFormat="MMMM d, yyyy hh:mm aa"
             />
-            {/* <Form.Control
-              className="col-7"
-              value={this.state.time}
-              onChange={(e: any) => this.setState({ time: e.target.value })}
-              name="time"
-              type="text"
-              required
-            /> */}
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlSelect2">
+            <Form.Label>Player with Reservation</Form.Label>
+            <Form.Control
+              onChange={(e: any) => this.setState({ customer: e.target.value })}
+              as="select"
+              multiple
+            >
+              {customerList}
+            </Form.Control>
           </Form.Group>
           <Button
             // style={{ marginLeft: "25%", marginRight: "25%", width: "30%" }}

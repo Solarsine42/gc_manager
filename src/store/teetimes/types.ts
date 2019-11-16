@@ -19,6 +19,7 @@ import {
 // Tee Time Model
 export interface Teetime {
   time: string;
+  customer?: number;
   id?: number;
 }
 
