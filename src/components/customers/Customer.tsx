@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import EditCustomerModal from "./EditCustomerModal";
 import DeleteCustomer from "./DeleteCustomer";
+import DeleteTeetime from "../teetimes/DeleteTeetime";
+
 import Moment from "react-moment";
 
 interface CPropsTypes {
@@ -13,9 +15,10 @@ interface CPropsTypes {
 
 const Customer: React.FC<CPropsTypes> = props => {
   const teeTimeList = props.customer.teetimes.map((ttime: any) => (
-    <p>
-      <Moment format="MM/DD/YYYY HH:mm A">{ttime.time}</Moment>
-    </p>
+    <div>
+      <Moment format="MM/DD/YYYY HH:mm A">{ttime.time}</Moment>{" "}
+      <DeleteTeetime id={ttime.id} />
+    </div>
   ));
 
   return (
@@ -26,10 +29,8 @@ const Customer: React.FC<CPropsTypes> = props => {
           <Dropdown.Toggle size="sm" variant="success" id="dropdown-button">
             Options
           </Dropdown.Toggle>
-
           <Dropdown.Menu>
             <Dropdown.Item>Add Tee Time</Dropdown.Item>
-            <Dropdown.Item>Remove Tee Time</Dropdown.Item>
             <EditCustomerModal
               id={props.customer.id}
               customer={props.customer}
