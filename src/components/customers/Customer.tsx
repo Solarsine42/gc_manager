@@ -16,9 +16,13 @@ interface CPropsTypes {
 
 const Customer: React.FC<CPropsTypes> = props => {
   const teeTimeList = props.customer.teetimes.map((ttime: any) => (
-    <div>
-      <Moment format="MM/DD/YYYY HH:mm A">{ttime.time}</Moment>{" "}
-      <DeleteTeetime id={ttime.id} />
+    <div className="row">
+      <div className="col-4">
+        <Moment format="MM/DD/YYYY HH:mm A">{ttime.time}</Moment>{" "}
+      </div>
+      <div className="col">
+        <DeleteTeetime id={ttime.id} />
+      </div>
     </div>
   ));
 
@@ -41,6 +45,7 @@ const Customer: React.FC<CPropsTypes> = props => {
         </Dropdown>
       </div>
       <div>
+        <h6 style={{ textDecoration: "underline" }}>Posted Tee Times</h6>
         <p>
           {props.customer.teetimes[0] ? teeTimeList : "No Tee Times listed"}
         </p>

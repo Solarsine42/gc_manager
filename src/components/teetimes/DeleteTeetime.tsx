@@ -12,7 +12,7 @@ const RmvTeetime: React.FC<DTTPropsTypes> = props => {
   return (
     <FaTimes
       onClick={() => props.dispatch(rmvTeetime(props.id))}
-      style={{ color: "red" }}
+      style={{ cursor: "pointer", color: "red" }}
     />
   );
 };
