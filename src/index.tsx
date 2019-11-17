@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import "react-datepicker/dist/react-datepicker.css";
 
 ReactDOM.render(
   <Router>

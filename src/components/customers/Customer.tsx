@@ -4,6 +4,7 @@ import { Dropdown } from "react-bootstrap";
 import EditCustomerModal from "./EditCustomerModal";
 import DeleteCustomer from "./DeleteCustomer";
 import DeleteTeetime from "../teetimes/DeleteTeetime";
+import AddTeetimeModal from "../teetimes/AddTeetimeModal";
 
 import Moment from "react-moment";
 
@@ -30,7 +31,7 @@ const Customer: React.FC<CPropsTypes> = props => {
             Options
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item>Add Tee Time</Dropdown.Item>
+            <AddTeetimeModal id={props.customer.id} customer={props.customer} />
             <EditCustomerModal
               id={props.customer.id}
               customer={props.customer}
